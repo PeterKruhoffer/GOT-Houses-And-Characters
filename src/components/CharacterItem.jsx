@@ -1,35 +1,34 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 
-const HouseItem = ({ item }) => {
+const CharacterItem = ({ item }) => {
     return (
-        <Link to={"/houses/" + item.name}>
+        <div>
             <div className='card'>
                 <div className='card-inner'>
                     <div className='card-front'>
-                        <img src={item.logoURL} alt="House Crest" />
+                        <img src={item.image} alt="Character img" />
                     </div>
                     <div className='card-back'>
                         <h1>{item.name}</h1>
                         <ul>
                             <li>
-                                <strong>House words:</strong> {item.words}
+                                <strong>Actor:</strong> {item.actor}
                             </li>
                             <li>
-                                <strong>Sigil:</strong> {item.sigil}
+                                <strong>Status:</strong> {item.alive ? "Alive" : "Dead"}
                             </li>
                             <li>
-                                <strong>Seat:</strong> {item.seat[0]}
+                                <strong>Age:</strong> {item.age?.age ?? "Not Known"}
                             </li>
                             <li>
-                                <strong>Region:</strong> {item.region[0]}
+                                <strong>Alligiance:</strong> {item.allegiances[0]}
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 
-export default HouseItem
+export default CharacterItem

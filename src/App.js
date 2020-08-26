@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios"
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import HouseGrid from "./components/HouseGrid"
 import Header from "./components/ui/Header"
+import CharacterGrid from "./components/CharacterGrid"
 import './App.css';
 
 function App() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(`https://api.got.show/api/show/houses`)
-
-      setItems(result.data)
-    }
-    fetchItems()
-  }, [])
-
   return (
-    <div className="container">
-      <Header />
-      <HouseGrid items={items} />
-    </div>
+    <Router>
+      <div className="container">
+        <Switch>
+          <Route exact path="/">
+            <Header />
+            <HouseGrid />
+          </Route>
+          <Route path="/houses/:house">
+            <Header />
+            <CharacterGrid />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
