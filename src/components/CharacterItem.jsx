@@ -1,27 +1,27 @@
 import React from 'react'
 
-const CharacterItem = ({ item }) => {
+const CharacterItem = ({ item: { image, name, age, alive, allegiances, actor } }) => {
     return (
         <div>
             <div className='card'>
                 <div className='card-inner'>
                     <div className='card-front'>
-                        <img src={item.image} alt="Character img" />
+                        <img src={image} alt="Character img" />
                     </div>
                     <div className='card-back'>
-                        <h1>{item.name}</h1>
+                        <h1>{name}</h1>
                         <ul>
                             <li>
-                                <strong>Actor:</strong> {item.actor}
+                                <strong>Actor:</strong> {actor}
                             </li>
                             <li>
-                                <strong>Status:</strong> {item.alive ? "Alive" : "Dead"}
+                                <strong>Status:</strong> {alive ? "Alive" : "Dead"}
                             </li>
                             <li>
-                                <strong>Age:</strong> {item.age?.age ?? "Not Known"}
+                                <strong>Age:</strong> {age?.age ?? "Not Known"}
                             </li>
                             <li>
-                                <strong>Alligiance:</strong> {item.allegiances[0]}
+                                <strong>Alligiance:</strong> {allegiances[0]}
                             </li>
                         </ul>
                     </div>
