@@ -1,5 +1,5 @@
 Heavily inspired by TraversyMedia's Breaking Bad API: 
-https://youtu.be/YaioUnMw0mo
+https://www.youtube.com/watch?v=YaioUnMw0mo
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
